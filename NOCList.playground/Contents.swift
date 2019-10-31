@@ -99,26 +99,44 @@ func findHighRisk() {
         if highRiskAgent.accessLevel > 7 {
             if highRiskAgent.compromised == true {
                 count += 1
-                print(<#T##items: Any...##Any#>)
+                print("Mi-agent \(highRiskAgent.realName), compromised level is \(highRiskAgent.compromised), with an access level of \(highRiskAgent.accessLevel) **WARNING** **COMPROMISED**")
             }
         }
     }
 }
-
+findHighRisk()
 
 //: ## Step 8
 //: Call the above function and check the output in the console to ensure it is functioning properly.
-
+findHighRisk()
 
 
 //: ## Step 9
 //: Create a function that finds totals for low, mid, and high level agents. Low level agents are 4 or lower, mid are 5-7, and high level agents are 8 or above. Iterate over each agent and use a `switch` statement to determine their level group. At the end of the function, print a statement like the following: "# low level agents, # mid level agents, and # high level agents"
 
-
+func findTotal() {
+    for totalAgent in miAgents {
+        var count = 0
+        switch totalAgent.accessLevel {
+        case 0...4:
+            count += 1
+            print("\(count) low level agents")
+        case 5...7:
+            count += 1
+            print("\(count) mid level agents")
+        case 8...11:
+            count += 1
+            print("\(count) high level agents")
+        default:
+            print("No agents available")
+                
+            }
+        }
+    }
 
 //: ## Step 10
 //: Call the above function and check its output in the console.
-
+findTotal()
 
 
 //: ## Step 11 (Optional)
